@@ -63,7 +63,7 @@ export default {
           setTimeout(() => {
             this.welcome = false
             this.initiate = true
-          }, 10000)
+          }, 5000)
           this.courierSearchTimeoutModal = true
           clearInterval(x)
         }
@@ -81,15 +81,15 @@ export default {
   font-size 100px
   font-weight bold
   font-family 'Lobster', cursive
-  -webkit-animation puff-in-top 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
-  animation puff-in-top 0.8s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
+  -webkit-animation puff-in-top 0.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
+  animation puff-in-top 0.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
 
 .initiate-display
   font-size 100px
   font-weight bold
   font-family 'Ibarra Real Nova', serif
-  -webkit-animation roll-in-left 0.6s ease-out both
-  animation roll-in-left 0.6s ease-out both
+  -webkit-animation roll-in-left 0.1s ease-out both
+  animation roll-in-left 0.1s ease-out both
 
 .timer-display
   font-size 200px
@@ -97,7 +97,7 @@ export default {
   font-weight bold
   -webkit-animation fade-out-bck 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
   animation fade-out-bck 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
-  animation-delay 301s
+  animation-delay 300s
 
 .myVideo
   position fixed
