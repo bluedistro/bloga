@@ -12,7 +12,7 @@
          </span>
       </div>
       <div class="content">
-        <span class="welcome-display" v-if=welcome> Welcome to 2020</span>
+        <span class="welcome-display" v-if=welcome>Oda Emmanuel Presby welcome you to 2020</span>
         <span class="initiate-display" v-if=initiate>Happy New Year!!!</span>
       </div>
   </q-page>
@@ -81,22 +81,22 @@ export default {
   font-size 100px
   font-weight bold
   font-family 'Lobster', cursive
-  -webkit-animation puff-in-top 0.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
-  animation puff-in-top 0.1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
+  -webkit-animation puff-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
+  animation puff-in-top 0.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both
 
 .initiate-display
   font-size 100px
   font-weight bold
   font-family 'Ibarra Real Nova', serif
-  -webkit-animation roll-in-left 0.1s ease-out both
-  animation roll-in-left 0.1s ease-out both
+  -webkit-animation roll-in-left 0.4s ease-out both
+  animation roll-in-left 0.4s ease-out both
 
 .timer-display
   font-size 200px
   font-family 'Ibarra Real Nova', serif
   font-weight bold
-  -webkit-animation fade-out-bck 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
-  animation fade-out-bck 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+  -webkit-animation fade-out-bck 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+  animation fade-out-bck 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
   animation-delay 300s
 
 .myVideo
