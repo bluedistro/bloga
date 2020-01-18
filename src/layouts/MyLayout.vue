@@ -38,7 +38,7 @@
             <q-btn flat round dense class="q-mr-xs" icon="search"></q-btn>
           </template>
         </q-input>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item clickable @click="goHome">
           <q-item-section avatar>
             <q-icon name="school" />
           </q-item-section>
@@ -47,7 +47,7 @@
             <q-item-label caption>view information and edit</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
+        <q-item clickable @click="registerMember">
           <q-item-section avatar>
             <q-icon name="code" />
           </q-item-section>
