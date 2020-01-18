@@ -32,7 +32,16 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Congregation Registration Portal</q-item-label>
+        <q-item>
+          <q-item-section avatar>
+            <q-avatar>
+              <img src="../assets/clogo.jpeg">
+            </q-avatar>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Congregation Registration Portal</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-input color="grey-2" standard dense label="search for a member...">
           <template v-slot:append>
             <q-btn flat round dense class="q-mr-xs" icon="search"></q-btn>
