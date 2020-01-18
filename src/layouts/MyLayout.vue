@@ -19,8 +19,8 @@
           </template>
         </q-input>
         <q-tabs shrink>
-          <q-tab no-caps >Home</q-tab>
-          <q-tab no-caps >Add New Member</q-tab>
+          <q-tab no-caps @click="goHome">Home</q-tab>
+          <q-tab no-caps @click="registerMember">Add New Member</q-tab>
         </q-tabs>
         <!-- <q-btn flat round dense icon="apps" class="q-mr-xs"></q-btn> -->
       </q-toolbar>
@@ -73,6 +73,14 @@ export default {
   data () {
     return {
       leftDrawerOpen: false
+    }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({ name: 'home' })
+    },
+    registerMember () {
+      this.$router.push({ name: 'registerMember' })
     }
   }
 }
