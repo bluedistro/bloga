@@ -5,13 +5,26 @@
             <q-form
             @submit="onSubmit"
             @reset="onReset"
-            class="q-gutter-md col-md-8 col-sm-12 col-12 col-lg-8"
+            class="q-gutter-md col-md-8 col-sm-12 col-12 col-lg-8 form-card"
             >
+            <div class="text-h6">
+              <q-item>
+                <q-item-section avatar>
+                  <q-avatar>
+                    <img src="../assets/clogo.jpeg">
+                  </q-avatar>
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Membership Registration Form</q-item-label>
+                  <q-item-label caption><strong>Presbyterian Church of Ghana, Millennium City Sector, Preaching Point, Kasoa.</strong></q-item-label>
+                </q-item-section>
+              </q-item>
+            </div>
             <div class="row q-gutter-sm">
               <q-input
                   standard
                   dense
-                  class="col-md-4 col-sm-12 col-12 col-lg-12"
+                  class="col-md-4 col-sm-11 col-11 col-lg-12"
                   v-model="firstName"
                   label="First name *"
                   hint="First name"
@@ -22,7 +35,7 @@
               <q-input
                   standard
                   dense
-                  class="col-md-3 col-sm-12 col-12 col-lg-12"
+                  class="col-md-3 col-sm-11 col-11 col-lg-12"
                   v-model="middleName"
                   label="Middle name *"
                   hint="Middle name is optional"
@@ -31,7 +44,7 @@
               <q-input
               standard
               dense
-              class="col-md-4 col-sm-12 col-12 col-lg-12"
+              class="col-md-4 col-sm-11 col-11 col-lg-12"
               v-model="lastName"
               label="Last name"
               hint="Last name"
@@ -49,7 +62,7 @@
               hint="Select date of birth"
               mask="date"
               :rules="['date']"
-              class="col-md-4 col-sm-12 col-12">
+              class="col-md-4 col-sm-11 col-11">
                 <template v-slot:append>
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
@@ -67,7 +80,7 @@
               hint="Select date when you first joined congregation"
               mask="date"
               :rules="['date']"
-              class="col-md-3 col-sm-12 col-12">
+              class="col-md-3 col-sm-11 col-11">
                 <template v-slot:append>
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
@@ -85,7 +98,7 @@
               hint="Select date of baptism"
               mask="date"
               :rules="['date']"
-              class="col-md-4 col-sm-12 col-12">
+              class="col-md-4 col-sm-11 col-11">
                 <template v-slot:append>
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
@@ -104,7 +117,7 @@
                 :options="affiliatedGroupOptions"
                 label="Affiliated Group in church"
                 hint="Select a group (or groups) you have joined in the church"
-                class="col-md-6 col-lg-6 col-sm-12 col-12">
+                class="col-md-6 col-lg-6 col-sm-11 col-11">
                 <template v-if="affiliatedGroup.length != 0" v-slot:append>
                   <q-icon name="cancel" @click.stop="affiliatedGroup = []" class="cursor-pointer" />
                 </template>
@@ -117,7 +130,7 @@
                 :options="churchPositionHeldOptions"
                 label="Position held in church"
                 hint="Select a position (or positions) you hold in the church"
-                class="col-md-5 col-lg-6 col-sm-12 col-12">
+                class="col-md-5 col-lg-6 col-sm-11 col-11">
                 <template v-if="churchPositionHeld.length != 0" v-slot:append>
                   <q-icon name="cancel" @click.stop="churchPositionHeld = []" class="cursor-pointer" />
                 </template>
@@ -128,7 +141,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please explain/state the title of the position held"
                 label="State the title of the position"
                 v-model="otherPosition"
@@ -140,7 +153,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-6 col-lg-11 col-sm-12 col-12"
+                class="col-md-6 col-lg-11 col-sm-11 col-11"
                 hint="Please state the name of your next of kin"
                 label="Next of kin"
                 v-model="nextOfKin"
@@ -149,7 +162,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-5 col-lg-11 col-sm-12 col-12"
+                class="col-md-5 col-lg-11 col-sm-11 col-11"
                 hint="Please state the contact number of your named next of kin"
                 label="Next of kin contact"
                 v-model="nextOfKinContact"
@@ -158,7 +171,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-5 col-lg-5 col-sm-12 col-12"
+                class="col-md-5 col-lg-5 col-sm-11 col-11"
                 hint="Please state your father's full name"
                 label="Father's name"
                 v-model="fatherName"
@@ -167,7 +180,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-6 col-lg-5 col-sm-12 col-12"
+                class="col-md-6 col-lg-5 col-sm-11 col-11"
                 hint="Please state your mother's full name"
                 label="Mother's name"
                 v-model="motherName"
@@ -176,7 +189,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-5 col-lg-5 col-sm-12 col-12"
+                class="col-md-5 col-lg-5 col-sm-11 col-11"
                 hint="Please state your phone number"
                 label="Phone number"
                 v-model="phoneNumber"
@@ -186,7 +199,7 @@
                 dense
                 standard
                 type="email"
-                class="col-md-6 col-lg-6 col-sm-12 col-12"
+                class="col-md-6 col-lg-6 col-sm-11 col-11"
                 hint="Please state your email address if any"
                 label="Email address (optional)"
                 v-model="emailAddress"
@@ -198,7 +211,7 @@
                 :options="parentLivingStatusOptions"
                 label="Parent's status"
                 hint="Select an option that applies to your parent's"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 <template v-if="parentLivingStatus" v-slot:append>
                   <q-icon name="cancel" @click.stop="parentLivingStatus = null" class="cursor-pointer" />
                 </template>
@@ -210,7 +223,7 @@
                 :options="communicantStatusOptions"
                 label="Communicant status"
                 hint="Select your communicant status"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 <template v-if="communicantStatus" v-slot:append>
                   <q-icon name="cancel" @click.stop="communicantStatus = null" class="cursor-pointer" />
                 </template>
@@ -222,7 +235,7 @@
                 :options="sexOptions"
                 label="Sex"
                 hint="Select your sex"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 <template v-if="sex" v-slot:append>
                   <q-icon name="cancel" @click.stop="sex = null" class="cursor-pointer" />
                 </template>
@@ -234,14 +247,14 @@
                 :options="maritalStatusOptions"
                 label="Marital status"
                 hint="Select your marital status"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 </q-select>
 
                 <q-input
                 dense
                 standard
                 v-show="maritalStatus == 'Married'"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state the name of your spouse"
                 label="Spouse name"
                 v-model="spouseName"
@@ -256,7 +269,7 @@
               hint="Select date of marriage"
               mask="date"
               :rules="['date']"
-              class="col-md-11 col-sm-12 col-12">
+              class="col-md-11 col-sm-11 col-11">
                 <template v-slot:append>
                   <q-icon name="event" class="cursor-pointer">
                     <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
@@ -273,14 +286,14 @@
                 v-show="maritalStatus == 'Married'"
                 label="Marriage type"
                 hint="Select your marriage initiation type"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 </q-select>
 
                 <q-input
                 dense
                 standard
                 type="number"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state number of children if any"
                 label="Children"
                 v-model="numberOfChildren"
@@ -293,7 +306,7 @@
                 :options="languagesSpokenOptions"
                 label="Language(s)"
                 hint="Select your languages you are fluent in"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 <template v-if="languagesSpoken.length != 0" v-slot:append>
                   <q-icon name="cancel" @click.stop="languagesSpoken = []" class="cursor-pointer" />
                 </template>
@@ -303,7 +316,7 @@
                 dense
                 standard
                 v-show="languagesSpoken.includes('Others')"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please list the other language(s) spoken separated by comma (if many)"
                 label="State other languages spoken"
                 v-model="otherLanguages"
@@ -315,7 +328,7 @@
                 :options="nationalityOptions"
                 label="Nationality"
                 hint="Select your nationality"
-                class="col-md-11 col-lg-11 col-sm-12 col-12">
+                class="col-md-11 col-lg-11 col-sm-11 col-11">
                 <template v-if="nationality" v-slot:append>
                   <q-icon name="cancel" @click.stop="nationality = null" class="cursor-pointer" />
                 </template>
@@ -325,7 +338,7 @@
                 dense
                 standard
                 v-show="nationality == 'Other'"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state your nationality"
                 label="State nationality"
                 v-model="otherNationality"
@@ -337,14 +350,14 @@
                 :options="employmentStatusOptions"
                 label="Employment status"
                 hint="Kindly select whether you are employed or not"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 />
 
                 <q-input
                 dense
                 standard
                 v-show="employmentStatus == 'Employed'"
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state the work you currently do"
                 label="Profession"
                 v-model="occupation"
@@ -353,7 +366,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state where you live (e.g., area, house number) or a description to where you live"
                 label="Residence"
                 v-model="residence"
@@ -362,7 +375,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state where you were born"
                 label="Birth place"
                 v-model="placeOfBirth"
@@ -371,7 +384,7 @@
                 <q-input
                 dense
                 standard
-                class="col-md-11 col-lg-11 col-sm-12 col-12"
+                class="col-md-11 col-lg-11 col-sm-11 col-11"
                 hint="Please state your hometown"
                 label="Hometown"
                 v-model="hometown"
@@ -552,3 +565,11 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+.form-card
+  border solid $grey-4 1px
+  background-color $grey-2
+  border-radius 5px
+  padding-bottom 20px
+  margin-top 30px
+</style>
