@@ -404,6 +404,7 @@
                 @failed="failed"
                 @uploading="uploading"
                 :factory="uploadFactory"
+                class="col-md-11 col-lg-11 col-sm-11 col-11 uploader-div"
                 ref="uploader"
               />
 
@@ -490,22 +491,22 @@ export default {
   },
   methods: {
     uploading () {
-      console.log('uploading')
+      // console.log('uploading')
     },
     finished () {
-      console.log('finished')
+      // console.log('finished')
     },
     uploaded () {
-      console.log('uploaded')
+      // console.log('uploaded')
     },
     added () {
-      console.log('added')
+      // console.log('added')
     },
     failed () {
-      console.log('failed')
+      // console.log('failed')
     },
     factoryFailed () {
-      console.log('factory failed')
+      // console.log('factory failed')
     },
     uploadFactory (files) {
       return new Promise((resolve, reject) => {
@@ -516,10 +517,8 @@ export default {
         axios.post(path, fd, {
           headers: { 'Content-Type': 'multipart/form-data' }
         }).then(response => {
-          console.log('resp ', response)
           resolve({ url: 'http://localhost:5000/api/uploadSuccess' })
         }).catch(error => {
-          console.log('error ', error)
           reject(error)
         })
       })
@@ -621,4 +620,7 @@ export default {
   border-radius 5px
   padding-bottom 20px
   margin-top 30px
+
+.uploader-div
+   max-width 300px
 </style>
