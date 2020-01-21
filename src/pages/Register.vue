@@ -392,12 +392,26 @@
 
               </div>
 
+              <q-uploader
+                auto-upload
+                label="Select and upload a clear image of yourself. Max file size (1Mb)"
+                accept=".jpg, image/*"
+                :max-file-size="1024000"
+                @added="added"
+                @uploaded="uploaded"
+                @finish="finished"
+                @factory-failed="factoryFailed"
+                @failed="failed"
+                @uploading="uploading"
+                :factory="uploadFactory"
+                ref="uploader"
+              />
+
             <div>
                 <q-btn no-caps label="Submit" type="submit" color="primary"/>
                 <q-btn no-caps label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
             </div>
             </q-form>
-
         </div>
     </q-page>
 </template>
@@ -475,6 +489,41 @@ export default {
     }
   },
   methods: {
+    uploading () {
+      console.log('uploading')
+    },
+    finished () {
+      console.log('finished')
+    },
+    uploaded () {
+      console.log('uploaded')
+    },
+    added () {
+      console.log('added')
+    },
+    failed () {
+      console.log('failed')
+    },
+    factoryFailed () {
+      console.log('factory failed')
+    },
+    uploadFactory (files) {
+      return new Promise((resolve, reject) => {
+        const fd = new FormData()
+        let file = files[0]
+        fd.append('file', file)
+        let path = 'http://localhost:5000/api/upload'
+        axios.post(path, fd, {
+          headers: { 'Content-Type': 'multipart/form-data' }
+        }).then(response => {
+          console.log('resp ', response)
+          resolve({ url: 'http://localhost:5000/api/uploadSuccess' })
+        }).catch(error => {
+          console.log('error ', error)
+          reject(error)
+        })
+      })
+    },
     onSubmit () {
       // some basic error checks
       if (this.maritalStatus === 'Single') {
