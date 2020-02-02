@@ -5,7 +5,12 @@ export function login ({ commit }, user) {
     const params = { username: user.username, password: user.password }
     let path = 'http://localhost:5000/api/login'
     axios.post(path, params).then(resp => {
-      commit('loginSuccess', true)
+      console.log('resp ', resp.data.success)
+      if (resp.data.success === true) {
+        commit('loginSuccess', true)
+      } else {
+        commit('loginSuccess', false)
+      }
       resolve(resp)
     }).catch(error => {
       commit('loginSuccess', false)

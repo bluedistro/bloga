@@ -50,7 +50,6 @@ export default {
       let user = { username: this.username, password: this.password }
       this.$store.dispatch('example/login', user)
         .then(resp => {
-          console.log('response ', resp.data.success)
           let loginStatus = this.$store.getters['example/getLoginSuccess']
           if (loginStatus === true) {
             this.$router.push({ name: 'home' })
