@@ -1,5 +1,5 @@
-export default function () {
-  return {
-    //
-  }
+const state = {
+  login: false
 }
+
+export default state

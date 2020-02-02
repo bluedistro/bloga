@@ -47,9 +47,18 @@ export default {
 
   methods: {
     onSubmit () {
-      if (this.username === 'username' && this.password === 'password') {
-        this.$router.push({ name: 'home' })
-      }
+      let user = { username: this.username, password: this.password }
+      this.$store.dispatch('example/login', user)
+        .then(resp => {
+          console.log('response ', resp.data.success)
+          let loginStatus = this.$store.getters['example/getLoginSuccess']
+          if (loginStatus === true) {
+            this.$router.push({ name: 'home' })
+          }
+        })
+        .catch(error => {
+          console.log('error ', error)
+        })
     }
   }
 }

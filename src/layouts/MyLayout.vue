@@ -21,6 +21,7 @@
         <q-tabs shrink>
           <q-tab no-caps @click="goHome">Home</q-tab>
           <q-tab no-caps @click="registerMember">Add New Member</q-tab>
+          <q-tab no-caps @click="logout">Logout</q-tab>
         </q-tabs>
         <!-- <q-btn flat round dense icon="apps" class="q-mr-xs"></q-btn> -->
       </q-toolbar>
@@ -90,6 +91,13 @@ export default {
     },
     registerMember () {
       this.$router.push({ name: 'registerMember' })
+    },
+    logout () {
+      this.$store.dispatch('example/logout')
+        .then(() => {
+          console.log('out ', this.$store.getters['example/getLoginSuccess'])
+          this.$router.push({ name: 'login' })
+        })
     }
   }
 }
