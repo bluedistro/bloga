@@ -1,6 +1,6 @@
 <template>
     <q-page>
-        <div class="row q-pa-md flex-center">
+        <div class="row q-pa-md flex-center reg-page">
 
             <q-form
             @submit="onSubmit"
@@ -623,4 +623,7 @@ export default {
 
 .uploader-div
    max-width 300px
+
+.reg-page
+  background-color $blue-3
 </style>

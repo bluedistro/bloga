@@ -111,5 +111,4 @@ export default {
     border solid $grey-4 1px
     border-radius 4px
     background-color $grey-1
-
 </style>
