@@ -10,10 +10,7 @@ export default {
   data () {
     return {}
   },
-  methods: {},
-  mounted () {
-    console.log('index file inside')
-  }
+  methods: {}
 }
 </script>
 
