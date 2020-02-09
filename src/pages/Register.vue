@@ -513,11 +513,11 @@ export default {
         const fd = new FormData()
         let file = files[0]
         fd.append('file', file)
-        let path = 'http://localhost:5000/api/upload'
+        let path = 'https://church-backend.herokuapp.com/api/upload'
         axios.post(path, fd, {
           headers: { 'Content-Type': 'multipart/form-data' }
         }).then(response => {
-          resolve({ url: 'http://localhost:5000/api/uploadSuccess' })
+          resolve({ url: 'https://church-backend.herokuapp.com/api/uploadSuccess' })
         }).catch(error => {
           reject(error)
         })
@@ -567,7 +567,7 @@ export default {
         hometown: this.hometown
       }
       // eslint-disable-next-line no-unused-vars
-      let basePath = 'http://127.0.0.1:5000/api/register'
+      let basePath = 'https://church-backend.herokuapp.com/api/register'
       // eslint-disable-next-line no-new
       new Promise((resolve, reject) => {
         axios.post(basePath, msg).then(resp => {
